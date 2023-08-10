@@ -8,10 +8,6 @@
 #include "SDL_image.h"
 
 class TextureLoader{
-
-private:
-
 public:
-
     static SDL_Texture* LoadTexture(const char* filename, SDL_Renderer* ren);
 };
