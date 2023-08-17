@@ -2,19 +2,21 @@
 #define CLASSROOM_CORRUPTION_GAME_H
 
 #endif //CLASSROOM_CORRUPTION_GAME_H
-
+#pragma once
 #include "SDL2/SDL.h"
 #include "SDL_image.h"
 #include <iostream>
 #include <vector>
 
+
 class Game{
 private:
     bool isRunning;
     SDL_Window* window;
-    SDL_Renderer* renderer;
 
 public:
+
+    static SDL_Renderer * renderer;
 
     Game();
     ~Game();
@@ -29,7 +31,7 @@ public:
 
     bool running() { return isRunning; };
 
-    SDL_Renderer* getRenderer() const { return renderer;}
+//    SDL_Renderer* getRenderer() const { return renderer;}
     SDL_Window* getWindow() const { return window;}
 
 };
