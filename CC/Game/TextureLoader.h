@@ -3,12 +3,10 @@
 
 #endif //CLASSROOM_CORRUPTION_TEXTURELOADER_H
 
+#pragma once
+#include "Game.h"
 
-#include "SDL.h"
-#include "SDL_image.h"
-
-class TextureLoader{
-public:
-    static SDL_Texture* LoadTexture(const char* filename, SDL_Renderer* ren);
+struct TextureLoader{
+    static SDL_Texture* LoadTexture(const char* filename);
+    static void Draw(SDL_Texture* tex, SDL_Rect src, SDL_Rect dest);
 };
-
