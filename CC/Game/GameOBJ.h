@@ -1,37 +1,25 @@
-#ifndef CLASSROOM_CORRUPTION_GAME_H
-#define CLASSROOM_CORRUPTION_GAME_H
+#ifndef CLASSROOM_CORRUPTION_GAMEOBJ_H
+#define CLASSROOM_CORRUPTION_GAMEOBJ_H
 
-#endif //CLASSROOM_CORRUPTION_GAME_H
+#endif //CLASSROOM_CORRUPTION_GAMEOBJ_H
+
 #pragma once
-#include "SDL2/SDL.h"
-#include "SDL_image.h"
-#include <iostream>
-#include <vector>
+#include "Game.h"
+#include "TextureLoader.h"
 
+class GameOBJ{
 
-class Game{
 private:
-    bool isRunning;
-    SDL_Window* window;
+    int x, y;
+
+    SDL_Texture* objTexture;
+    SDL_Rect srcRect, destRect;
 
 public:
 
-    static SDL_Renderer * renderer;
+    GameOBJ(const char* texSheet, int, int);
+    ~GameOBJ();
 
-    Game();
-    ~Game();
-
-
-    void init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen);
-
-    void handleEvents();
-    void update();
-    void render();
-    void clean();
-
-    bool running() { return isRunning; };
-
-//    SDL_Renderer* getRenderer() const { return renderer;}
-    SDL_Window* getWindow() const { return window;}
-
+    void Update();
+    void Render();
 };
