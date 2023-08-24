@@ -1,11 +1,16 @@
-#include "GameOBJ.h"
+#include "Game.h"
 #include "Map.h"
+#include "ECS.h"
+#include "Components.h"
+#include "Vector2D.h"
 
-GameOBJ* Player1;
-GameOBJ* Player2;
 Map* map1;
 
 SDL_Renderer* Game::renderer = nullptr;
+
+Manager manager;
+
+auto& player(manager.addEntity());
 
 Game::Game()
 {
@@ -50,9 +55,13 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
         isRunning = false;
     }
 
-    Player2 = new GameOBJ(R"(C:\Users\mecca\CLionProjects\ClassRoom_Corruption\CRT.png)", 0, 0);
-    Player1 = new GameOBJ(R"(C:\Users\mecca\CLionProjects\ClassRoom_Corruption\CRT.png)", 50, 50 );
     map1 = new Map();
+
+
+    player.addComponent<TransformComponent>();
+    player.addComponent<SpriteComponent>(R"(C:\Users\mecca\CLionProjects\ClassRoom_Corruption\CRT.png)");
+
+
 }
 
 void Game::handleEvents()
@@ -71,9 +80,16 @@ void Game::handleEvents()
 }
 
 void Game::update(){
-    Player2->Update();
-    Player1 ->Update();
-//    map1 ->
+
+    manager.refresh();
+    manager.update();
+
+    player.getComponent<TransformComponent>().position.Add(Vector2D(5, 0));
+
+    if(player.getComponent<TransformComponent>().position.x > 100)
+    {
+        player.getComponent<SpriteComponent>().setTexutre(R"(C:\Users\mecca\CLionProjects\ClassRoom_Corruption\desk.png)");
+    }
 }
 
 void Game::render()
@@ -81,8 +97,7 @@ void Game::render()
 
     SDL_RenderClear(renderer);
     map1 -> DrawMap();
-    Player2 -> Render();
-    Player1 -> Render();
+    manager.draw();
 
     SDL_RenderPresent(renderer);
 }
@@ -90,7 +105,6 @@ void Game::render()
 void Game::clean()
 {
     SDL_DestroyWindow(window);
-
     SDL_DestroyRenderer(renderer);
 
     SDL_Quit();
