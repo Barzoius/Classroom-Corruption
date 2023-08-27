@@ -12,10 +12,7 @@ Manager manager;
 
 auto& player(manager.addEntity());
 
-Game::Game()
-{
-
-}
+Game::Game() {}
 
 Game::~Game()
 {
