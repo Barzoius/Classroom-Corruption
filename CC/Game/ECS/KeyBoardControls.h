@@ -27,6 +27,7 @@ public:
                 case SDLK_UP:
                     transform -> velocity.y = -1;
                     break;
+                
 
                 case SDLK_a:
                     transform -> velocity.x = -1;
@@ -55,6 +56,7 @@ public:
                 case SDLK_UP:
                     transform -> velocity.y = 0;
                     break;
+                
                     
                 case SDLK_a:
                     transform -> velocity.x = 0;
