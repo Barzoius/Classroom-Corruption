@@ -21,23 +21,22 @@ public:
             switch(Game::event.key.keysym.sym)
             {
                 case SDLK_w:
-                    transform -> velocity.y = -1;
-                    break;
-
                 case SDLK_UP:
                     transform -> velocity.y = -1;
                     break;
-                
 
                 case SDLK_a:
+                case SDLK_LEFT:
                     transform -> velocity.x = -1;
                     break;
 
                 case SDLK_s:
+                case SDLK_DOWN:
                     transform -> velocity.y = 1;
                     break;
 
                 case SDLK_d:
+                case SDLK_RIGHT:
                     transform -> velocity.x = 1;
                     break;
                 default:
@@ -50,23 +49,22 @@ public:
             switch(Game::event.key.keysym.sym)
             {
                 case SDLK_w:
-                    transform -> velocity.y = 0;
-                    break;
-
                 case SDLK_UP:
                     transform -> velocity.y = 0;
                     break;
-                
-                    
+
                 case SDLK_a:
+                case SDLK_LEFT:
                     transform -> velocity.x = 0;
                     break;
 
                 case SDLK_s:
+                case SDLK_DOWN:
                     transform -> velocity.y = 0;
                     break;
 
                 case SDLK_d:
+                case SDLK_RIGHT:
                     transform -> velocity.x = 0;
                     break;
                 default:
