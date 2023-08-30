@@ -1,9 +1,5 @@
-#ifndef CLASSROOM_CORRUPTION_TEXTURELOADER_H
-#define CLASSROOM_CORRUPTION_TEXTURELOADER_H
-
-#endif //CLASSROOM_CORRUPTION_TEXTURELOADER_H
-
 #pragma once
+
 #include "Game.h"
 
 struct TextureLoader{
