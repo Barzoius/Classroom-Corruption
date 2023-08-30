@@ -17,6 +17,7 @@ public:
     {
         tag = t;
     }
+
     void init() override
     {
         if(!entity -> hasComponent<TransformComponent>())
