@@ -1,18 +1,24 @@
 #include "Game.h"
 #include "Map.h"
-#include "ECS.h"
-#include "Components.h"
+#include "ECS/ECS.h"
+#include "ECS/Components.h"
 #include "Vector2D.h"
+#include "Collision.h"
 
 Map* map1;
 
 SDL_Renderer* Game::renderer = nullptr;
+SDL_Event Game::event;
 
 Manager manager;
 
 auto& player(manager.addEntity());
+auto& wall(manager.addEntity());
 
-Game::Game() {}
+Game::Game()
+{
+
+}
 
 Game::~Game()
 {
@@ -55,15 +61,21 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     map1 = new Map();
 
 
-    player.addComponent<TransformComponent>();
+    player.addComponent<TransformComponent>(0.0f, 0.0f, 64, 64, 2);
     player.addComponent<SpriteComponent>(R"(C:\Users\mecca\CLionProjects\ClassRoom_Corruption\CRT.png)");
+    player.addComponent<KeyBoardContols>();
+    player.addComponent<CollisionComponent>("player");
+
+    wall.addComponent<TransformComponent>(300.0f, 300.0f, 300, 20, 1);
+    wall.addComponent<SpriteComponent>(R"(C:\Users\mecca\CLionProjects\ClassRoom_Corruption\desk.png)");
+    wall.addComponent<CollisionComponent>("wall");
 
 
 }
 
 void Game::handleEvents()
 {
-    SDL_Event event;
+
     SDL_PollEvent(&event);
 
     switch (event.type)
@@ -81,12 +93,14 @@ void Game::update(){
     manager.refresh();
     manager.update();
 
-    player.getComponent<TransformComponent>().position.Add(Vector2D(5, 0));
-
-    if(player.getComponent<TransformComponent>().position.x > 100)
+    if(Collision::AABB(player.getComponent<CollisionComponent>().collider,
+                       wall.getComponent<CollisionComponent>().collider))
     {
-        player.getComponent<SpriteComponent>().setTexutre(R"(C:\Users\mecca\CLionProjects\ClassRoom_Corruption\desk.png)");
+        player.getComponent<TransformComponent>().scale = 1;
+        player.getComponent<TransformComponent>().velocity * -1;
+        std::cout<<"wall hit"<<std::endl;
     }
+
 }
 
 void Game::render()
