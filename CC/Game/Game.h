@@ -1,8 +1,5 @@
-#ifndef CLASSROOM_CORRUPTION_GAME_H
-#define CLASSROOM_CORRUPTION_GAME_H
-
-#endif //CLASSROOM_CORRUPTION_GAME_H
 #pragma once
+
 #include "SDL2/SDL.h"
 #include "SDL_image.h"
 #include <iostream>
