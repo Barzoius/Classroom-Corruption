@@ -1,8 +1,3 @@
-#ifndef CLASSROOM_CORRUPTION_GAMEOBJ_H
-#define CLASSROOM_CORRUPTION_GAMEOBJ_H
-
-#endif //CLASSROOM_CORRUPTION_GAMEOBJ_H
-
 #pragma once
 #include "Game.h"
 #include "TextureLoader.h"
