@@ -18,13 +18,8 @@ struct TransformComponent : public Component
     {
         position.x = x;
         position.y = y;
-
     }
 
-    void update() override
-    {
-
-    }
-
+    void update() override {}
 
 };
