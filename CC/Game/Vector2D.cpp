@@ -92,7 +92,6 @@ Vector2D& Vector2D::operator*(const int &i)
     this -> y *= i;
 
     return *this;
-
 }
 
 Vector2D &Vector2D::Zero()
