@@ -43,8 +43,6 @@ public:
 };
 
 class Furniture : public Piece{};
-//class Desk : public Furniture{};
-
 
 class Player : public Piece{
 private:
