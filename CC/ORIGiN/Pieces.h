@@ -1,9 +1,3 @@
-=#ifndef CLASSROOM_CORRUPTION_PIECES_H
-#define CLASSROOM_CORRUPTION_PIECES_H
-
-#endif //CLASSROOM_CORRUPTION_PIECES_H
-
-
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_image.h"
 #include <cstring>
