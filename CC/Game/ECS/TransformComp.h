@@ -21,5 +21,4 @@ struct TransformComponent : public Component
     }
 
     void update() override {}
-
 };
