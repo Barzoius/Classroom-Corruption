@@ -41,9 +41,12 @@ Map::Map() {
 
 }
 
-void Map::LoadMap(int arr[20][25]) {
-    for(int row = 0; row < 20; row++){
-        for(int col = 0; col < 25; col++){
+void Map::LoadMap(int arr[20][25]) 
+{
+    for(int row = 0; row < 20; row++)
+    {
+        for(int col = 0; col < 25; col++)
+        {
             map[row][col] = arr[row][col];
         }
     }
