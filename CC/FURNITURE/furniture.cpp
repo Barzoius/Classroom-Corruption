@@ -47,6 +47,5 @@ SDL_Rect DESK::getPos_y() const { return this -> pos;}
 
 void DESK::setDeskTexture(SDL_Renderer *R) {
         this -> desk_texture = SDL_CreateTextureFromSurface(R, desk_image);
-
 }
 ///---scrap it---///
