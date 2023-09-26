@@ -43,7 +43,7 @@ bool DESK::LoadDesk(std::string& filename) {
     }
 }
 
-SDL_Rect DESK::getPos_y() const { return this -> pos;}
+SDL_Rect DESK::getPos_y() const { return this -> pos; }
 
 void DESK::setDeskTexture(SDL_Renderer *R) {
         this -> desk_texture = SDL_CreateTextureFromSurface(R, desk_image);
