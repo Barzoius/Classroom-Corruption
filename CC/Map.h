@@ -1,8 +1,3 @@
-#ifndef CLASSROOM_CORRUPTION_MAP_H
-#define CLASSROOM_CORRUPTION_MAP_H
-
-#endif //CLASSROOM_CORRUPTION_MAP_H
-
 #pragma once
 #include "Game.h"
 
