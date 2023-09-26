@@ -11,7 +11,6 @@ private:
 
 public:
 
-
     DESK();
 
     void draw(SDL_Surface* dest);
@@ -26,8 +25,6 @@ public:
 };
 
 class TEACHERS_DESK : public DESK{
-private:
-
 public:
     TEACHERS_DESK()= default;
 };
