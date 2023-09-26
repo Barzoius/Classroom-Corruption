@@ -24,7 +24,8 @@ int main(int, char**) {
 
         frameTime = SDL_GetTicks() - frameStart;
 
-        if(frameDelay > frameTime){
+        if(frameDelay > frameTime)
+        {
             SDL_Delay(frameDelay - frameTime);
         }
 
