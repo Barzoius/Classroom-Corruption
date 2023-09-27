@@ -4,7 +4,6 @@
 #include "SDL.h"
 #include "TextureLoader.h"
 
-
 class SpriteComponent : public Component
 {
 private:
