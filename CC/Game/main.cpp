@@ -28,7 +28,6 @@ int main(int, char**) {
         {
             SDL_Delay(frameDelay - frameTime);
         }
-
     }
 
     game->clean();
